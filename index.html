@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario siagie v3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://d31dn7nfpuwjnm.cloudfront.net/images/valoraciones/0038/0988/C%C3%B3mo_me_inscribo_en_el_Siagie.png') no-repeat center center / cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            backdrop-filter: brightness(0.9);
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 40px);
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+        .form-container h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #2c5282;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2b6cb0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #2c5282;
+        }
+        .important-note {
+            background-color: rgba(226, 232, 240, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #2d3748;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulario siagie v3</h1>
+        <form id="institutionForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="institution">Institución Educativa</label>
+                    <input type="text" id="institution" name="institution" placeholder="Nombre de la Institución" required>
+                </div>
+                <div class="form-group">
+                    <label for="code">Código Modular</label>
+                    <input type="text" id="code" name="code" placeholder="Código Modular" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="director">Director(a)</label>
+                    <input type="text" id="director" name="director" placeholder="Nombre Completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni" placeholder="Número de DNI" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subject">Asunto</label>
+                <textarea id="subject" name="subject" placeholder="Escribe el asunto" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Enviar Formulario</button>
+            </div>
+        </form>
+        <div class="important-note">
+            <strong>Nota Importante:</strong>
+            <p>📌 Para cualquier solicitud o problema relacionado con el SIAGE V3, le pedimos que se realice mediante un oficio, excepto para casos de reseteo de contraseñas, para los cuales puede contactarme directamente.</p>
+        </div>
+    </div>
+
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            // URL de la aplicación web de Google Apps Script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxyOVLq7u8np4xJtBMFrtkW77jqmobnS9-z39Yi0QdXTvdX8HTBX52SypU7S_8iyD5ctA/exec';
+
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    alert('Formulario enviado con éxito y guardado en Google Sheets.');
+                } else {
+                    alert('Error al enviar el formulario.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Ocurrió un error al enviar el formulario.');
+            }
+        }
+    </script>
+</body>
+</html>
