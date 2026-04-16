@@ -1,21 +1,36 @@
-# Siagie v3
+# SIAGIE v3 — Formulario de Soporte Técnico
 
-Formulario de soporte técnico para el sistema **SIAGIE v3** del Ministerio de Educación del Perú. Permite a directores de instituciones educativas enviar solicitudes directamente al especialista encargado.
+> Plataforma web para gestionar solicitudes de soporte del sistema **SIAGIE v3** del Ministerio de Educación del Perú, dirigida a directores de instituciones educativas.
+
+---
+
+## Vista previa
+
+🔗 [joshegatito.github.io/siagiev3](https://joshegatito.github.io/siagiev3/)
+
+---
 
 ## Características
 
-- Animación de typing en el título
-- Diseño glassmorphism responsivo
-- Validación de DNI (8 dígitos)
-- Adjunto de archivos (PNG, JPG, PDF)
-- Pantalla de confirmación tras el envío
-- Deploy automático a GitHub Pages vía GitHub Actions
+| Feature | Detalle |
+|---|---|
+| Typing animation | Título animado con efecto de escritura |
+| Diseño profesional | Card con franja institucional + glassmorphism |
+| Validación de campos | DNI (8 dígitos), campos requeridos |
+| Adjunto de archivos | Soporte para PNG, JPG y PDF |
+| Responsive | Adaptado para móvil, tablet y escritorio |
+| Sin backend | Envío de formularios vía FormSubmit.co |
+
+---
 
 ## Tecnologías
 
-- React 18 + Vite
-- CSS Modules
-- FormSubmit.co (envío de formularios sin backend)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white&style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white&style=flat-square)
+![CSS Modules](https://img.shields.io/badge/CSS_Modules-✓-1572B6?style=flat-square)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?logo=github&style=flat-square)
+
+---
 
 ## Desarrollo local
 
@@ -23,13 +38,3 @@ Formulario de soporte técnico para el sistema **SIAGIE v3** del Ministerio de E
 npm install
 npm run dev
 ```
-
-## Deploy
-
-El proyecto se despliega automáticamente en [GitHub Pages](https://joshegatito.github.io/siagiev3/) al hacer `push` a la rama `main`.
-
-Asegúrate de tener activado **Settings → Pages → Source: GitHub Actions** en el repositorio.
-
----
-
-Dev ❤️ por [José Galván](https://joshegatito.github.io/dev/)

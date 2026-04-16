@@ -56,15 +56,17 @@ export default function TypingText() {
 
 const styles = {
   heading: {
-    fontSize: '1.6em',
+    fontSize: '1.55em',
     textAlign: 'center',
-    color: '#2c5282',
-    marginBottom: '20px',
-    minHeight: '2em',
+    color: '#ffffff',
+    marginBottom: '0',
+    minHeight: '1.8em',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '2px',
+    fontWeight: 700,
+    textShadow: '0 1px 4px rgba(0,0,0,0.2)',
   },
   text: {
     display: 'inline-block',
@@ -72,7 +74,7 @@ const styles = {
   cursor: {
     display: 'inline-block',
     animation: 'blink 0.8s step-end infinite',
-    color: '#2b6cb0',
+    color: 'rgba(255,255,255,0.7)',
     fontWeight: 300,
   },
 }
