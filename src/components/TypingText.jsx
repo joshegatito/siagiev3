@@ -74,7 +74,7 @@ const styles = {
   cursor: {
     display: 'inline-block',
     animation: 'blink 0.8s step-end infinite',
-    color: 'rgba(255,255,255,0.7)',
+    color: 'rgba(165, 214, 167, 0.9)',
     fontWeight: 300,
   },
 }
